@@ -1,3 +1,5 @@
+package get_requests;
+
 import io.restassured.response.Response;
 import org.junit.Test;
 import static org.junit.Assert.assertFalse;
@@ -48,11 +50,11 @@ public class Get02 {
 
 
         // Responce body de bulunan spesifik bir veri bulunmadigini nasil assert edilir
-        // assertTrue() methodu parantezin icindeki deger true ise testi gecirir
+        // assertTrue() methodu parantezin icindeki deger false ise testi gecirir
         assertFalse(response.asString().contains("TechProEd"));
 
 
-        //
+        // assertEquals() methodu parantez icindeki iki deger esit ise testi gecirir
         assertEquals("Cowboy", response.header("Server"));
 
 
