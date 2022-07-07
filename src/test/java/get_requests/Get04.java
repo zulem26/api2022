@@ -50,7 +50,6 @@ public class Get04 extends JsonPlaceHolderBaseUrl {
                         "title", hasItem("quis eius est sint explicabo"),
                         "userId", hasItems(2,7,9));
 
-
     }
 
 }
