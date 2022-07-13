@@ -38,7 +38,7 @@ public class Get06 extends HerokuAppBaseUrl {
      */
 
     @Test
-    public void get01(){
+    public void get01() {
 
         // 1. Step : Set the Url
         spec.pathParams("first", "booking", "second", 101);
@@ -92,6 +92,22 @@ public class Get06 extends HerokuAppBaseUrl {
             // 3) assertAll() kullanilir. kullanilmazsa kod her zaman pass olur
             softAssert.assertAll();
 
+            /*
+            1. Step : Set the Url
+            spec.pathParams("first", "booking", "second", 555);
+            2. Step : Set the expected data
+
+            3. Step : Send the request and get the response
+            Response response = given().spec(spec).when().get("/{first}/{second});
+
+            4. Step : Do Assertion
+            response.then().assertThat().statusCode(200).contentType(ContentType.JSON).
+            body("firstname", equalTo("GGS"), "lastname", equalTo(), "FINCH"),
+            "totalprice", equalTo(111), "depositpaid", equalTo(true),
+            "bookingdates.checkin", equalTo("2018-01-01"), "bookingdates.chekout", "2019-01-01"));
+
+
+             */
 
     }
 }
