@@ -50,6 +50,7 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         spec.pathParams("first", "todos", "second", 2);
 
         // 2. Step : Set the expected data
+        //  "id": 2, sistem tarafindan ataniyor
 
         Map<String, Object> expectedData = new HashMap<>();
         expectedData.put("userId", 1);
@@ -70,9 +71,9 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         assertEquals(expectedData.get("userId"), actualData.get("userId"));
         assertEquals(expectedData.get("title"), actualData.get("title"));
         assertEquals(expectedData.get("completed"), actualData.get("completed"));
-        assertEquals(expectedData.get("StatusCode"), response.getStatusCode());
-        assertEquals(expectedData.get("Via"), response.getHeader("Via"));
-        assertEquals(expectedData.get("Server"), response.getHeader("Server"));
+        assertEquals(expectedData.get("StatusCode"), response.getStatusCode()); //response dan cagrildi Map in icinde yok
+        assertEquals(expectedData.get("Via"), response.getHeader("Via"));  // Header icindeki Via
+        assertEquals(expectedData.get("Server"), response.getHeader("Server")); // Header icindeki Server
 
     }
 
@@ -85,6 +86,8 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         // 2. Step : Set the expected data
         JsonPlaceHolderTestData expectedData = new JsonPlaceHolderTestData();
         Map<String, Object> expectedDataMap = expectedData.expectedDataWithAllKeys(1, "quis ut nam facilis et officia qui", false);
+        // Map<Object, Object> yapmadik cunku islem yapilmaz,cast sorunu olur, buyuk sinif oldugu icin yavas calisir
+
         expectedDataMap.put("StatusCode", 200);
         expectedDataMap.put("Via", "1.1 vegur");
         expectedDataMap.put("Server", "cloudflare");
