@@ -35,7 +35,7 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
      */
 
     @Test
-    public void get01(){
+    public void post01(){
 
         // 1. Step : Set the Url
         spec.pathParam("first", "todos");
