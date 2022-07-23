@@ -57,5 +57,23 @@ public class Post03Pojo extends JsonPlaceHolderBaseUrl {
     //   System.out.println(actualBody.toString());
     //   assertEquals(requestBody.toString(),actualBody.toString());
 
+        /*
+        1. Step : Set the url
+        spec.pathParam("first", "todos");
+
+
+        2. Step : set the expected data
+        JsonPlaceHolderPojo requestBody = new JsonPlaceHolderPojo(55, "Tidy your room", false);
+
+        3. Step : send post request get the response
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(requestBody).when().post("/{first}");
+
+
+         4. Do Assertions
+         JsonPlaceHolderPojo actualBOdy = response.as(JsonPlaceHolderPojo.class);
+
+
+         */
+
     }
 }

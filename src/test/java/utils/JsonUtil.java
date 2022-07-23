@@ -6,6 +6,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import java.io.IOException;
 
 public class JsonUtil {
+
+
     private static ObjectMapper mapper;
 
     static {
@@ -21,12 +23,22 @@ public class JsonUtil {
         try {
             javaResult = mapper.readValue(json, cls);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return javaResult;
     }
 
 
 
-    // 2.Method : Java Objesini Json Dataya cevirir. (De- Serialization)
+    // 2.Method : Java Objesini Json Dataya cevirir. (Serialization)
+
+    public static String convertJavaObjectToJson(Object obj){
+        String jsonResult = null;
+        try {
+            jsonResult = mapper.writeValueAsString(obj);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return jsonResult;
+    }
 }
